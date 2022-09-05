@@ -1,0 +1,51 @@
+@use "helpers/mixns.scss";
+.light-box {
+  img {
+    max-width: 100%;
+  }
+  .slider {
+    @include mixns.display($display: flex);
+    position: relative;
+    overflow: hidden;
+    width: 375px;
+    > {
+      img {
+        opacity: 0;
+        margin-top: -40px;
+      }
+      img:nth-child(1) {
+        opacity: 1;
+      }
+      div {
+        @include mixns.display(
+          $display: flex,
+          $align: center,
+          $justify: center
+        );
+        position: absolute;
+        top: 50%;
+        transform: translateY((-50%));
+        background-color: var(--white);
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        border-radius: 50%;
+        > img {
+          width: 8.5px;
+        }
+      }
+      .previous {
+        left: 20px;
+      }
+      .next {
+        right: 20px;
+      }
+    }
+  }
+  .thumbnails {
+    @include mixns.display($display: none);
+    > img {
+      width: 25px;
+    }
+  }
+}

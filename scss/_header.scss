@@ -1,0 +1,85 @@
+@use "helpers/mixns.scss";
+header {
+  @include mixns.display($display: flex, $align: center);
+  background-color: var(--white);
+  position: relative;
+  top: 0;
+  padding: 40px 20px;
+  height: 75px;
+  box-shadow: 0 0 20px 0px var(--dark-grayish-blue);
+  nav {
+    @include mixns.display($display: flex, $align: center);
+    flex: 1;
+    .menu {
+      width: 30px;
+      & > ul {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        list-style: none;
+        margin: 0;
+        background-color: rgb(209, 248, 248);
+        width: 50vw;
+        height: 100vh;
+        padding-left: 20px;
+        padding-top: 50px;
+        transition: 0.3s;
+        & > {
+          img {
+            display: block;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+          }
+          li {
+            margin: 20px 0;
+            cursor: pointer;
+            & > a {
+              color: var(--very-dark-blue);
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+  .cart-avatar {
+    & > {
+      img {
+        width: 20px;
+      }
+      img:nth-child(2) {
+        @include mixns.display($display: inline-block);
+        margin-left: 10px;
+      }
+      .cart {
+        @include mixns.display($display: none);
+        position: absolute;
+        background-color: rgb(231, 227, 227);
+        height: 200px;
+        width: 90vw;
+        top: 115px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 10px;
+        padding-top: 25px;
+        box-shadow: 0 0 20px 0px var(--dark-grayish-blue);
+        & > {
+          span {
+            @include mixns.display($display: block);
+            border-bottom: solid 1px var(--very-dark-blue);
+            padding-left: 20px;
+            padding-bottom: 20px;
+            color: var(--very-dark-blue-blue);
+          }
+          p {
+            text-align: center;
+            margin-top: 15%;
+            transform: translateY(-20%);
+          }
+        }
+      }
+    }
+  }
+}
