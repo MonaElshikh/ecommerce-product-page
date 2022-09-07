@@ -12,6 +12,7 @@
       img {
         opacity: 0;
         margin-top: -40px;
+        cursor: pointer;
       }
       img:nth-child(1) {
         opacity: 1;
@@ -22,8 +23,7 @@
           $align: center,
           $justify: center
         );
-        position: absolute;
-        top: 50%;
+        @include mixns.position($position: absolute, $top: 50%);
         transform: translateY((-50%));
         background-color: var(--white);
         width: 40px;
@@ -44,8 +44,29 @@
   }
   .thumbnails {
     @include mixns.display($display: none);
-    > img {
-      width: 25px;
+  }
+}
+/*Start Media Query*/
+@include mixns.mediaBreakpoints($min-width: "min-width:1440px") {
+  .light-box {
+    .thumbnails {
+      @include mixns.display(
+        $display: flex !important,
+        $align: center,
+        $justify: space-between
+      );
+      margin-top: 30px;
+      > img {
+        width: 80px;
+        border-radius: 10px;
+        &.selected {
+          border: solid 2px #e68437;
+          opacity: 0.5;
+        }
+        &:hover {
+          opacity: 0.5;
+        }
+      }
     }
   }
 }

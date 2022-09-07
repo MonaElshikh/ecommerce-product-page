@@ -6,21 +6,23 @@ header {
   top: 0;
   padding: 40px 20px;
   height: 75px;
-  box-shadow: 0 0 20px 0px var(--dark-grayish-blue);
   nav {
     @include mixns.display($display: flex, $align: center);
     flex: 1;
     .menu {
       width: 30px;
       & > ul {
-        display: none;
-        position: absolute;
-        top: 0;
-        left: 0;
+        @include mixns.display($display: none);
+        @include mixns.position(
+          $position: fixed,
+          $top: 0,
+          $left: 0,
+          $z-index: 3
+        );
         list-style: none;
         margin: 0;
-        background-color: rgb(209, 248, 248);
-        width: 50vw;
+        background-color: var(--white);
+        width: 65vw;
         height: 100vh;
         padding-left: 20px;
         padding-top: 50px;
@@ -45,7 +47,7 @@ header {
     }
   }
   .cart-avatar {
-    & > {
+    > {
       img {
         width: 20px;
       }
@@ -56,11 +58,12 @@ header {
       .cart {
         @include mixns.display($display: none);
         position: absolute;
-        background-color: rgb(231, 227, 227);
-        height: 200px;
-        width: 90vw;
-        top: 115px;
+        background-color: var(--white);
+        height: 230px;
+        width: 95vw;
+        top: 90px;
         left: 50%;
+        z-index: 1;
         transform: translateX(-50%);
         border-radius: 10px;
         padding-top: 25px;
@@ -68,16 +71,134 @@ header {
         & > {
           span {
             @include mixns.display($display: block);
-            border-bottom: solid 1px var(--very-dark-blue);
+            border-bottom: solid 1px var(--grayish-blue);
             padding-left: 20px;
             padding-bottom: 20px;
             color: var(--very-dark-blue-blue);
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: 1.1px;
           }
           p {
             text-align: center;
             margin-top: 15%;
             transform: translateY(-20%);
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: 1.2px;
+            color: var(--dark-grayish-blue);
+            &.empty {
+              @include mixns.display($display: none);
+            }
           }
+          .full {
+            padding-bottom: 30px;
+            .cart-data {
+              @include mixns.display($display: flex, $align: center);
+              padding: 20px;
+              > {
+                img {
+                  cursor: pointer;
+                  &:first-child {
+                    width: 50px;
+                    border-radius: 5px;
+                    margin-right: 20px;
+                  }
+                }
+                .info {
+                  flex: 1;
+                  color: var(--dark-grayish-blue);
+                  font-size: 14px;
+                  margin-right: 20px;
+                  p {
+                    margin: 6px 0;
+                  }
+                }
+              }
+            }
+            .chek-out {
+              text-align: center;
+              button {
+                width: 90%;
+                border: none;
+                padding: 20px;
+                border-radius: 10px;
+                background-color: var(--orange);
+                color: var(--white);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.overlay {
+  @include mixns.display($display: none);
+  @include mixns.overly($color: black, $opacity: 0.5, $z-index: 3);
+}
+/* Start Media Query*/
+@include mixns.mediaBreakpoints($min-width: "min-width:1440px") {
+  header {
+    padding-inline: 100px;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-bottom: solid 1px var(--grayish-blue);
+    nav {
+      height: 75px;
+      .menu {
+        > {
+          img {
+            @include mixns.display($display: none);
+          }
+          ul {
+            @include mixns.display($display: flex !important, $align: center);
+            background-color: transparent !important;
+            height: 75px !important;
+            padding-top: 30px !important;
+            left: 300px !important;
+            & > img {
+              @include mixns.display($display: none !important);
+            }
+            & > li {
+              margin-inline: 20px !important;
+              height: 100%;
+              & > a {
+                color: var(--dark-grayish-blue) !important;
+              }
+              &:hover {
+                border-bottom: solid 5px #e68437;
+                > a {
+                  color: var(--very-dark-blue) !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .cart-avatar {
+      > {
+        img {
+          width: 40px;
+          border: solid 3px transparent;
+          &:nth-child(1):hover {
+            cursor: pointer;
+            filter: brightness(0) invert(0);
+          }
+          &:nth-child(2) {
+            margin-left: 30px;
+            &:hover {
+              cursor: pointer;
+              border: solid 3px #e68437;
+              border-radius: 50%;
+            }
+          }
+        }
+        .cart {
+          width: 25vw;
+          top: 65px;
+          left: 85%;
         }
       }
     }
