@@ -52,13 +52,13 @@ function addProductToCart() {
         cartProduct.className = "full";
         cartProduct.innerHTML = `
     <div class="cart-data">
-      <img src="assets/images/image-product-1-thumbnail.jpg" alt="" />
+      <img src="project/assets/images/image-product-1-thumbnail.jpg" alt="" />
       <div class="info">
         <p>Autumn Limited Edition...</p>
         <span>$</span><span>125.00 x </span><span class="count"> ${quantity}</span
         ><span class="result">  $375.00</span>
       </div>
-      <img src="assets/images/icon-delete.svg" alt="delete" class="delete-btn"/>
+      <img src="project/assets/images/icon-delete.svg" alt="delete" class="delete-btn"/>
     </div>
     <div class="chek-out"><button>Check out</button></div>
  `;
@@ -180,13 +180,13 @@ function openLightBox(currentIndex) {
     for (let i = 1; i <= 4; i++) {
         let img = document.createElement("img");
         let thum = document.createElement("img");
-        img.src = `assets/images/image-product-${i}.jpg`;
+        img.src = `project/assets/images/image-product-${i}.jpg`;
         img.alt = `product-${i}`;
         img.setAttribute("data-index", i.toString());
         if (img.dataset.index == currentIndex.toString())
             img.className = "selected";
         imgsList.appendChild(img);
-        thum.src = `assets/images/image-product-${i}-thumbnail.jpg`;
+        thum.src = `project/assets/images/image-product-${i}-thumbnail.jpg`;
         thum.alt = `product-${i}-thumbnail`;
         thum.setAttribute("data-index", i.toString());
         if (thum.dataset.index == currentIndex.toString())

@@ -17,15 +17,6 @@ const gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     notify = require("gulp-notify");
 //************************************* Start Tasks ******************************************************/
-// html task
-gulp.task("html", () => {
-    return gulp.src("project/index.html")
-        .pipe(gulp.dest('dist'))
-        .pipe(notify({
-            message: "Html Task is Done",
-            onLast: true
-        }));
-});
 // css task
 gulp.task("css", () => {
     return gulp.src('project/css/main.scss')
@@ -68,7 +59,6 @@ gulp.task("connect", () => {
 // watch task
 gulp.task("watch", () => {
     connect.reload();
-    gulp.watch('project/index.html', gulp.series(['html']));
     gulp.watch('project/css/**/*.scss', gulp.series(['css']));
     gulp.watch('project/js/ts/*.ts', gulp.series(['js']));
 });
