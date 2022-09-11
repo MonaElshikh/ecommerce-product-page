@@ -15,7 +15,7 @@ let cartImg = document.querySelector(".cart-avatar> img:nth-child(2)");
 let quantityDiv = document.querySelector(".quantity");
 let menuIcon = document.querySelector(".menu img");
 let aSide = document.querySelector(".menu ul");
-let closeAside = document.querySelector(".menu ul > img");
+let closeAside = document.querySelector(".menu .close-menu ");
 let overlay = document.querySelector(".overlay");
 let quantitySpan = document.querySelector(".plus-minus span");
 let cartDiv = document.querySelector(".cart");
@@ -85,12 +85,18 @@ function showProductCart() {
         : (cartDiv.style.display = "block");
 }
 function toggleMenu() {
-    overlay.style.display == "block"
-        ? (overlay.style.display = "none")
-        : (overlay.style.display = "block");
-    aSide.style.display == "block"
-        ? (aSide.style.display = "none")
-        : (aSide.style.display = "block");
+    if (overlay.style.display == "block" &&
+        overlay.style.display == "block" &&
+        closeAside.style.display == "block") {
+        overlay.style.display = "none";
+        aSide.style.display = "none";
+        closeAside.style.display = "none";
+    }
+    else {
+        overlay.style.display = "block";
+        aSide.style.display = "block";
+        closeAside.style.display = "block";
+    }
 }
 function documentClickEventHandler() {
     document.addEventListener("click", (event) => {
@@ -217,7 +223,7 @@ minusBtn.addEventListener("click", productQuantityHandler);
 addToCartBtn.addEventListener("click", addProductToCart);
 cartImg.addEventListener("click", showProductCart);
 menuIcon === null || menuIcon === void 0 ? void 0 : menuIcon.addEventListener("click", toggleMenu);
-closeAside === null || closeAside === void 0 ? void 0 : closeAside.addEventListener("click", toggleMenu);
+closeAside.addEventListener("click", toggleMenu);
 documentClickEventHandler();
 if (thumbnailDiv.style.display !== "none") {
     thumbnailImagesClickHandler();

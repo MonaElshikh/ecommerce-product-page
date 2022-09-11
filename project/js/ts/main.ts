@@ -10,7 +10,7 @@ let cartImg = document.querySelector(
 let quantityDiv = document.querySelector(".quantity") as HTMLDivElement;
 let menuIcon = document.querySelector(".menu img") as HTMLImageElement;
 let aSide = document.querySelector(".menu ul") as HTMLUListElement;
-let closeAside = document.querySelector(".menu ul > img");
+let closeAside = document.querySelector(".menu .close-menu ") as HTMLDivElement;
 let overlay = document.querySelector(".overlay") as HTMLElement;
 let quantitySpan = document.querySelector(
   ".plus-minus span"
@@ -92,12 +92,19 @@ function showProductCart() {
     : (cartDiv.style.display = "block");
 }
 function toggleMenu() {
-  overlay.style.display == "block"
-    ? (overlay.style.display = "none")
-    : (overlay.style.display = "block");
-  aSide.style.display == "block"
-    ? (aSide.style.display = "none")
-    : (aSide.style.display = "block");
+  if (
+    overlay.style.display == "block" &&
+    overlay.style.display == "block" &&
+    closeAside.style.display == "block"
+  ) {
+    overlay.style.display = "none";
+    aSide.style.display = "none";
+    closeAside.style.display = "none";
+  } else {
+    overlay.style.display = "block";
+    aSide.style.display = "block";
+    closeAside.style.display = "block";
+  }
 }
 function documentClickEventHandler() {
   document.addEventListener("click", (event: any) => {
@@ -259,7 +266,7 @@ minusBtn.addEventListener("click", productQuantityHandler);
 addToCartBtn.addEventListener("click", addProductToCart);
 cartImg.addEventListener("click", showProductCart);
 menuIcon?.addEventListener("click", toggleMenu);
-closeAside?.addEventListener("click", toggleMenu);
+closeAside.addEventListener("click", toggleMenu);
 documentClickEventHandler();
 if (thumbnailDiv.style.display !== "none") {
   thumbnailImagesClickHandler();

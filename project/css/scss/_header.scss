@@ -11,6 +11,18 @@ header {
     flex: 1;
     .menu {
       width: 30px;
+      .close-menu {
+        @include mixns.display($display: none);
+        img {
+          @include mixns.display($display: block);
+          @include mixns.position(
+            $position: absolute,
+            $top: 20px,
+            $left: 20px,
+            $z-index: 5
+          );
+        }
+      }
       ul {
         @include mixns.display($display: none);
         @include mixns.position(
@@ -28,14 +40,6 @@ header {
         padding-top: 50px;
         transition: 0.3s;
         > {
-          img {
-            @include mixns.display($display: block);
-            @include mixns.position(
-              $position: absolute,
-              $top: 20px,
-              $left: 20px
-            );
-          }
           li {
             margin: 20px 0;
             cursor: pointer;
@@ -170,10 +174,13 @@ header {
     nav {
       height: 75px;
       .menu {
-        > {
+        @include mixns.display($display: none);
+        .close-menu {
           img {
             @include mixns.display($display: none);
           }
+        }
+        > {
           ul {
             @include mixns.display($display: flex !important, $align: center);
             @include mixns.position($position: absolute, $z-index: 2);
