@@ -48,6 +48,7 @@ Users should be able to:
 - Flexbox
 - Mobile-first workflow
 - Scss -First Time- :)
+- gulp-js First Time :)
 
 ## Author
 
