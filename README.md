@@ -10,9 +10,6 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
@@ -37,7 +34,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/MonaElshikh/ecommerce-product-page]
-- Live Site URL: [Add live site URL here]
+- Live Site URL: [https://monaelshikh.github.io/ecommerce-product-page]
 
 ## My process
 
@@ -47,8 +44,9 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - Mobile-first workflow
-- Scss -First Time- :)
-- gulp-js First Time :)
+- Typescript
+- Scss
+- gulp.js
 
 ## Author
 
