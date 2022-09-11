@@ -1,0 +1,33 @@
+{
+  "name": "ecommerce-product-page",
+  "version": "1.0.0",
+  "description": "This is a solution to the [E-commerce product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6). Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MonaElshikh/ecommerce-product-page.git"
+  },
+  "keywords": [],
+  "author": "Mona Elshikh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MonaElshikh/ecommerce-product-page/issues"
+  },
+  "homepage": "https://github.com/MonaElshikh/ecommerce-product-page#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-connect": "^5.7.0",
+    "gulp-notify": "^4.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "sass": "^1.54.9"
+  },
+  "dependencies": {
+    "typescript": "^4.8.3"
+  }
+}

@@ -1,0 +1,77 @@
+@use "helpers/mixns.scss";
+/************************************************* Start modal *************************************************/
+.modal-content {
+  @include mixns.display($display: none);
+  margin-top: 100px;
+  .imgs-list {
+    @include mixns.position($position: relative);
+    width: 375px;
+    height: 375px;
+    > {
+      .close-list {
+        @include mixns.position($position: absolute, $top: -30px, $right: 5px);
+        filter: brightness(0) invert(1);
+        cursor: pointer;
+        &:hover {
+          filter: invert(76%) sepia(23%) saturate(5609%) hue-rotate(332deg)
+            brightness(91%) contrast(97%);
+        }
+      }
+      img:not(.close-list) {
+        @include mixns.position($position: absolute, $z-index: 1);
+        border-radius: 10px;
+        max-width: 100%;
+        opacity: 0;
+        transition: 0.5s;
+        &.selected {
+          opacity: 1;
+        }
+      }
+      div {
+        @include mixns.display(
+          $display: flex,
+          $align: center,
+          $justify: center
+        );
+        @include mixns.position($position: absolute, $top: 50%, $z-index: 2);
+        transform: translateY((-50%));
+        background-color: var(--white);
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        border-radius: 50%;
+        > img {
+          width: 8.5px;
+          &:hover {
+            filter: invert(76%) sepia(23%) saturate(5609%) hue-rotate(332deg)
+              brightness(91%) contrast(97%);
+          }
+        }
+      }
+      .modal-prev {
+        left: -20px;
+      }
+      .modal-next {
+        right: -20px;
+      }
+    }
+  }
+  .thumbs {
+    margin-top: 15px;
+    > img {
+      width: 50px;
+      border-radius: 5px;
+      width: 60px;
+      border-radius: 5px;
+      margin-inline: 5px;
+      cursor: pointer;
+      &.selected {
+        border: solid 4px #e68437;
+        opacity: 0.6;
+      }
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
