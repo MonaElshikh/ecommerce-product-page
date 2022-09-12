@@ -174,7 +174,9 @@ header {
     nav {
       height: 75px;
       .menu {
-        @include mixns.display($display: none);
+        img {
+          @include mixns.display($display: none);
+        }
         .close-menu {
           img {
             @include mixns.display($display: none);

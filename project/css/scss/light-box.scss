@@ -1,6 +1,6 @@
 @use "helpers/mixns.scss";
 /************************************************* Start modal *************************************************/
-.modal-content {
+.light-box {
   @include mixns.display($display: none);
   margin-top: 100px;
   .imgs-list {

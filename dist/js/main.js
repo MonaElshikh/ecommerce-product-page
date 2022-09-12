@@ -20,12 +20,12 @@ let overlay = document.querySelector(".overlay");
 let quantitySpan = document.querySelector(".plus-minus span");
 let cartDiv = document.querySelector(".cart");
 let emptyP = document.querySelector(".empty");
-let silderImages = Array.from(document.querySelectorAll(".slider>img"));
+let silderImages = Array.from(document.querySelectorAll(".images>img"));
 let thumbnailImages = Array.from(document.querySelectorAll(".thumbnails>img"));
 let thumbnailDiv = document.querySelector(".thumbnails");
 let nextBtn = document.querySelector(".next");
 let prevBtn = document.querySelector(".previous");
-let modalContent = document.querySelector(".modal-content");
+let lightBox = document.querySelector(".light-box");
 let quantity = 0;
 let currentIndex = 1;
 function productQuantityHandler(event) {
@@ -199,7 +199,7 @@ function openLightBox(currentIndex) {
             thum.className = "selected";
         thums.appendChild(thum);
     }
-    modalContent.style.cssText = `
+    lightBox.style.cssText = `
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -207,14 +207,14 @@ function openLightBox(currentIndex) {
     overlay.style.display = "block";
     thumbnailModalImagesClickHandler();
 }
-function closeLighBox() {
-    let closeModal = modalContent.querySelector(".close-list");
-    let imglist = modalContent.querySelector(".imgs-list");
-    let thums = modalContent.querySelector(".thumbs");
+function closeLightBox() {
+    let closeModal = lightBox.querySelector(".close-list");
+    let imglist = lightBox.querySelector(".imgs-list");
+    let thums = lightBox.querySelector(".thumbs");
     closeModal === null || closeModal === void 0 ? void 0 : closeModal.addEventListener("click", () => {
         imglist === null || imglist === void 0 ? void 0 : imglist.querySelectorAll(".imgs-list > img:not(.close-list)").forEach((img) => img.remove());
         thums === null || thums === void 0 ? void 0 : thums.querySelectorAll("img").forEach((thum) => thum.remove());
-        modalContent.style.display = "none";
+        lightBox.style.display = "none";
         overlay.style.display = "none";
     });
 }
@@ -230,7 +230,7 @@ if (thumbnailDiv.style.display !== "none") {
 }
 if (window.screen.width > 375) {
     sliderImagesClickHandler();
-    closeLighBox();
+    closeLightBox();
 }
 
 //# sourceMappingURL=main.js.map

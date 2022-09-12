@@ -18,7 +18,7 @@ let quantitySpan = document.querySelector(
 let cartDiv = document.querySelector(".cart") as HTMLDivElement;
 let emptyP = document.querySelector(".empty") as HTMLParagraphElement;
 let silderImages = Array.from(
-  document.querySelectorAll(".slider>img")
+  document.querySelectorAll(".images>img")
 ) as HTMLElement[];
 let thumbnailImages = Array.from(
   document.querySelectorAll(".thumbnails>img")
@@ -26,7 +26,7 @@ let thumbnailImages = Array.from(
 let thumbnailDiv = document.querySelector(".thumbnails") as HTMLDivElement;
 let nextBtn = document.querySelector(".next") as HTMLDivElement;
 let prevBtn = document.querySelector(".previous") as HTMLDivElement;
-let modalContent = document.querySelector(".modal-content") as HTMLDivElement;
+let lightBox = document.querySelector(".light-box") as HTMLDivElement;
 let quantity = 0;
 let currentIndex = 1;
 //#endregion
@@ -238,7 +238,7 @@ function openLightBox(currentIndex: any) {
       thum.className = "selected";
     thums.appendChild(thum);
   }
-  modalContent.style.cssText = `
+  lightBox.style.cssText = `
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -246,16 +246,16 @@ function openLightBox(currentIndex: any) {
   overlay.style.display = "block";
   thumbnailModalImagesClickHandler();
 }
-function closeLighBox() {
-  let closeModal = modalContent.querySelector(".close-list");
-  let imglist = modalContent.querySelector(".imgs-list");
-  let thums = modalContent.querySelector(".thumbs");
+function closeLightBox() {
+  let closeModal = lightBox.querySelector(".close-list");
+  let imglist = lightBox.querySelector(".imgs-list");
+  let thums = lightBox.querySelector(".thumbs");
   closeModal?.addEventListener("click", () => {
     imglist
       ?.querySelectorAll(".imgs-list > img:not(.close-list)")
       .forEach((img) => img.remove());
     thums?.querySelectorAll("img").forEach((thum) => thum.remove());
-    modalContent.style.display = "none";
+    lightBox.style.display = "none";
     overlay.style.display = "none";
   });
 }
@@ -274,7 +274,7 @@ if (thumbnailDiv.style.display !== "none") {
 // show popup in desktop mode
 if (window.screen.width > 375) {
   sliderImagesClickHandler();
-  closeLighBox();
+  closeLightBox();
 }
 
 //#endregion
