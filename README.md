@@ -10,6 +10,7 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
@@ -52,6 +53,10 @@ The designs were created to the following widths:
 - Typescript
 - Scss
 - gulp.js
+
+### What I learned
+
+- I learned Scss and Gulp js while doing this challange , It was very challanged to practise them , i faced some issues searched and fixed them.
 
 ## Author
 

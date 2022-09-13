@@ -5,8 +5,8 @@
   margin-top: 100px;
   .imgs-list {
     @include mixns.position($position: relative);
-    width: 375px;
-    height: 375px;
+    width: 450px;
+    height: 450px;
     > {
       .close-list {
         @include mixns.position($position: absolute, $top: -30px, $right: 5px);

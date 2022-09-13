@@ -57,6 +57,10 @@
 /************ Start Media Query ************/
 @include mixns.mediaBreakpoints($min-width: "min-width:1440px") {
   .slider {
+    .images {
+      width: 400px;
+      height: 400px;
+    }
     .thumbnails {
       @include mixns.display(
         $display: flex !important,
