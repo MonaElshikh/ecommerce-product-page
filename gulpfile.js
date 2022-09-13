@@ -32,7 +32,7 @@ gulp.task("css", () => {
 })
 // js task
 gulp.task("js", () => {
-    return gulp.src('project/js/ts/main.ts')
+    return gulp.src('project/ts/main.ts')
         .pipe(sourcemaps.init())
         .pipe(ts({
             target: "es2016",
@@ -60,7 +60,7 @@ gulp.task("connect", () => {
 gulp.task("watch", () => {
     connect.reload();
     gulp.watch('project/css/**/*.scss', gulp.series(['css']));
-    gulp.watch('project/js/ts/*.ts', gulp.series(['js']));
+    gulp.watch('project/ts/*.ts', gulp.series(['js']));
 });
 
 // Default task is WATCH
